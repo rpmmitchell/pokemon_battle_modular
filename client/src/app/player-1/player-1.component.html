@@ -1,0 +1,14 @@
+<p>
+  player-1 works!
+</p>
+
+<div *ngIf= " render1 " id="player_1">
+	<img src= "{{ poke1.data.sprites.front_default }}">
+	<div id="buttons_1">
+		<button (click)="player1_make_move1()">{{ poke1.data.moves[ rand_moves[0] ].move.name }}</button>
+		<button (click)="player1_make_move2()">{{ poke1.data.moves[ rand_moves[1] ].move.name }}</button>
+		<button (click)="player1_make_move3()">{{ poke1.data.moves[ rand_moves[2] ].move.name }}</button>
+		<button (click)="player1_make_move4()">{{ poke1.data.moves[ rand_moves[3] ].move.name }}</button>
+		<p> {{ _healthService.player_1_health  }}</p>
+	</div>
+</div>
