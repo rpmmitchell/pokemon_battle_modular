@@ -1,0 +1,28 @@
+#player_2 {
+	/*border: solid black 2px;*/
+}
+img {
+	/*border: solid 2px black;*/
+	width: 20%;
+	height: 10%;
+}
+
+#content{
+	vertical-align: top;
+	border: 2px solid black;
+	width: 50%;
+	float: right;
+}
+
+ul {
+	list-style: none;
+}
+
+#buttons_2 {
+	border: 2px solid black;
+	width: 25%;
+}
+
+button {
+	width: 50%;
+}

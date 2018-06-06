@@ -3,30 +3,19 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var request = require('request');
-mongoose.connect('mongodb://localhost/pokemon');
+mongoose.connect('mongodb://localhost/pokemon_battle');
 // Use native promises
 mongoose.Promise = global.Promise;
 
 
 var Schema = mongoose.Schema;
 var PokemonSchema = new mongoose.Schema({
-    name: {type: String, required: true, minlength: 3},
-    health: {type: Number, required: true},
-    abilities: {type: String, required: true}
+    name: {type: String, required: true},
+    wins: {type: Number, required: false},
 });
 
-var MoveSchema = new mongoose.Schema({
-	id: {type: Number, required: true},
-	name: {type: String, required: true},
-	accuracy: {type: Number, required: true},
-	power: {type: Number, required: true},
-	description: {type: String, required: true},
-	pp: {type: Number, required: true}
-})
 mongoose.model('Pokemon', PokemonSchema);
-mongoose.model('Move', MoveSchema);
 
-var Move = mongoose.model('Move');
 var Pokemon = mongoose.model("Pokemon");
 
 // Require body-parser (to receive post data from clients)
@@ -47,7 +36,6 @@ app.use(cors());
 
 
 app.get('/pokemon1/:id', (req, res) => {
-	console.log("IN POEKMON REQYEST 1")
 	request("http://pokeapi.co/api/v2/pokemon/" + req.params.id, {json: true}, (err, response, body) => {
 		if(err){
 			return console.log(err)
@@ -60,7 +48,6 @@ app.get('/pokemon1/:id', (req, res) => {
 });
 
 app.get('/pokemon2/:id', (req, res) => {
-	console.log("IN POEKMON REQYEST 2")
 	request("http://pokeapi.co/api/v2/pokemon/" + req.params.id, {json: true}, (err, response, body) => {
 		if(err){
 			return console.log(err)
@@ -73,7 +60,6 @@ app.get('/pokemon2/:id', (req, res) => {
 });
 
 app.get('/pokemon/grab/moves/:id', (req, res) => {
-	console.log("HELLO IN SERVER", req.params);
 	request("http://pokeapi.co/api/v2/move/" + req.params.id, {json: true}, (err, response, body) => {
 		if(err){
 			return console.log(err)
@@ -83,6 +69,11 @@ app.get('/pokemon/grab/moves/:id', (req, res) => {
 		}
 	})
 })
+
+app.post('/pokemon/player/win', (req, res) => {
+	console.log(req.body.name)
+})
+
 
 
 

@@ -8,8 +8,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  poke_pic1: any;
-  poke_pic2: any;
+  poke1: number;
+  poke2: number;
   constructor(
     private _httpService: HttpService,
     private _route: ActivatedRoute,
@@ -17,24 +17,13 @@ export class HomeComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.poke_pic1 = {id_1: ""}
-    this.poke_pic2 = {id_2: ""}
+
   }
-  poke1(event){
-    event.preventDefault();
-    console.log(this.poke_pic1.id_1);
-    this._router.navigate(['battle/' + this.poke_pic1.id_1 + '/' + this.poke_pic2.id_2]);
-  	// let observable = this._httpService.get_pokemon(this.poke_pic);
-  	// observable.subscribe(data => {
-   //  console.log("MADE IT BACK")
-  	// console.log(data.json());
-  	// })
-  }
-  store_move(){
-    let observable = this._httpService.move();
-    observable.subscribe(data => {
-      console.log('MADE IT BACK', data.json());
-    })
+  poke_pic(event){
+    this.poke1 = Math.floor(Math.random()*255)+1
+    this.poke2 = Math.floor(Math.random()*255)+1
+    console.log(this.poke1);
+    this._router.navigate(['battle/' + this.poke1 + '/' + this.poke2]);
   }
 
 }

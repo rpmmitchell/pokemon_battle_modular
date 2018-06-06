@@ -1,13 +1,16 @@
-<p>
-  player-2 works!
-</p>
-<div *ngIf = " render2 " id="player_2">
-	<img src= "{{ poke2.data.sprites.back_default }}">
-	<div id="buttons_2">
-		<button (click)="player2_make_move1()">{{ poke2.data.moves[ rand_moves2[0] ].move.name }}</button>
-		<button (click)="player2_make_move2()">{{ poke2.data.moves[ rand_moves2[1] ].move.name }}</button>
-		<button (click)="player2_make_move3()">{{ poke2.data.moves[ rand_moves2[2] ].move.name }}</button>
-		<button (click)="player2_make_move4()">{{ poke2.data.moves[ rand_moves2[3] ].move.name }}</button>
-		<p> {{ _healthService.player_2_health }}</p>
+
+<div *ngIf = "render2" id="player_2">
+	<img src= "{{ poke2.data.sprites.back_default }}" id="pic">
+	<div id="content">
+		<ul>
+			<li>{{name.name.toUpperCase()}}</li>
+			<li>Health: {{ _healthService.player_2_health }}</li>
+		</ul>
+		<div id="buttons_2">
+			<button (click)="player2_make_move1()">{{ poke2.data.moves[ rand_moves2[0] ].move.name }}</button>
+			<button (click)="player2_make_move2()">{{ poke2.data.moves[ rand_moves2[1] ].move.name }}</button>
+			<button (click)="player2_make_move3()">{{ poke2.data.moves[ rand_moves2[2] ].move.name }}</button>
+			<button (click)="player2_make_move4()">{{ poke2.data.moves[ rand_moves2[3] ].move.name }}</button>
+		</div>
 	</div>
 </div>

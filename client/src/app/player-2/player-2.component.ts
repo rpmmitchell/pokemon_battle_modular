@@ -10,6 +10,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 })
 export class Player2Component implements OnInit {
 	id: string;
+    name: object;
   	poke2: any = [];
   	rand_moves2: any = [];
   	rand_moves_url2: any = [];
@@ -49,7 +50,7 @@ export class Player2Component implements OnInit {
           this.rand_moves2.push(this.num2);
           this.rand_moves_url2.push(this.poke2.data.moves[this.num2].move.url)
         }
-
+        this.name = {name: this.poke2.data.name}
         this._healthService.player_2_health = this.poke2.data.stats[5].base_stat * 3
         this.attack_2 = this.poke2.data.stats[4].base_stat
         this.special_attack_2 = this.poke2.data.stats[3].base_stat
@@ -100,8 +101,13 @@ export class Player2Component implements OnInit {
     }
     else{
       this.attack_poke_2 = Math.floor(Math.random() * (this.player2_attack1 + this.attack_2));
-      this._healthService.player_1_health -= this.attack_poke_2
-      console.log("I ATTACKED PLAYER ONE FUCK YES", this._healthService.player_1_health) 
+      if(this._healthService.player_1_health > 0){
+        this._healthService.player_1_health -= this.attack_poke_2; 
+      }
+      else{
+        var observable = this._httpService.player_win(this.name);
+        observable.subscribe();
+      }
     }
   }
   player2_make_move2(){
@@ -110,9 +116,14 @@ export class Player2Component implements OnInit {
       // console.log("THIS HEALS");
     }
     else{
-      this.attack_poke_2 = Math.floor(Math.random() * (this.player2_attack2 + this.attack_2));
-      this._healthService.player_1_health -= this.attack_poke_2
-      console.log("I ATTACKED PLAYER ONE FUCK YES", this._healthService.player_1_health) 
+      this.attack_poke_2 = Math.floor(Math.random() * (this.player2_attack1 + this.attack_2));
+      if(this._healthService.player_1_health > 0){
+        this._healthService.player_1_health -= this.attack_poke_2; 
+      }
+      else{
+        var observable = this._httpService.player_win(this.name);
+        observable.subscribe();
+      }
     }
   }
   player2_make_move3(){
@@ -121,9 +132,14 @@ export class Player2Component implements OnInit {
       // console.log("THIS HEALS");
     }
     else{
-      this.attack_poke_2 = Math.floor(Math.random() * (this.player2_attack3 + this.attack_2));
-      this._healthService.player_1_health -= this.attack_poke_2
-      console.log("I ATTACKED PLAYER ONE FUCK YES", this._healthService.player_1_health) 
+      this.attack_poke_2 = Math.floor(Math.random() * (this.player2_attack1 + this.attack_2));
+      if(this._healthService.player_1_health > 0){
+        this._healthService.player_1_health -= this.attack_poke_2; 
+      }
+      else{
+        var observable = this._httpService.player_win(this.name);
+        observable.subscribe();
+      }
     }
   }
   player2_make_move4(){
@@ -132,9 +148,14 @@ export class Player2Component implements OnInit {
       // console.log("THIS HEALS");
     }
     else{
-      this.attack_poke_2 = Math.floor(Math.random() * (this.player2_attack4 + this.attack_2));
-      this._healthService.player_1_health -= this.attack_poke_2
-      console.log("I ATTACKED PLAYER ONE FUCK YES", this._healthService.player_1_health) 
+      this.attack_poke_2 = Math.floor(Math.random() * (this.player2_attack1 + this.attack_2));
+      if(this._healthService.player_1_health > 0){
+        this._healthService.player_1_health -= this.attack_poke_2; 
+      }
+      else{
+        var observable = this._httpService.player_win(this.name);
+        observable.subscribe();
+      }
     }
   }
 }

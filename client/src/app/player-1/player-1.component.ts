@@ -14,6 +14,7 @@ export class Player1Component implements OnInit {
 	rand_moves: any = [];
 	rand_moves_url: any = [];
 	render1: any;
+  name: object;
 	num: number;
   	health_1: number;
   	attack_1: number;
@@ -45,16 +46,17 @@ export class Player1Component implements OnInit {
  	 	  	let observable = this._httpService.get_pokemon1(id_1);
   			observable.subscribe(data => {
   				this.poke1 = data.json();
+          console.log('THIS IS THE POKE1 DATA', this.poke1)
   				for(let i = 0; i < 4; i++){
   					this.num = Math.floor(Math.random()*(this.poke1.data.moves.length))
   					this.rand_moves.push(this.num);
-         			this.rand_moves_url.push(this.poke1.data.moves[this.num].move.url)
+         		this.rand_moves_url.push(this.poke1.data.moves[this.num].move.url)
   				}
-  
-        		this._healthService.player_1_health = this.poke1.data.stats[5].base_stat * 3
-            this.attack_1 = this.poke1.data.stats[4].base_stat
-            this.special_attack_1 = this.poke1.data.stats[3].base_stat
-            this.poke1_move_stat();
+          this.name = {name: this.poke1.data.name}
+        	this._healthService.player_1_health = this.poke1.data.stats[5].base_stat * 3
+          this.attack_1 = this.poke1.data.stats[4].base_stat
+          this.special_attack_1 = this.poke1.data.stats[3].base_stat
+          this.poke1_move_stat();
   				this.render1 = true;
 
   			});	
@@ -92,8 +94,15 @@ export class Player1Component implements OnInit {
     }
     else{
       this.attack_poke_1 = Math.floor(Math.random() * (this.player1_attack1 + this.attack_1));
-      this._healthService.player_2_health -= this.attack_poke_1
-      console.log("I ATTACKED PLAYER TWO FUCK YES", this._healthService.player_2_health) 
+      if(this._healthService.player_2_health > 0){
+        this._healthService.player_2_health -= this.attack_poke_1; 
+      }
+      else{
+        var observable = this._httpService.player_win(this.name);
+        observable.subscribe();
+        // alert('Game Over');
+        // this._router.navigate(['']);
+      }
     }
   }
 
@@ -102,9 +111,16 @@ export class Player1Component implements OnInit {
       this._healthService.player_1_health += Math.floor(Math.random() * (this.special_attack_1));
     }
     else{
-      this.attack_poke_1 = Math.floor(Math.random() * (this.player1_attack2 + this.attack_1));
-      this._healthService.player_2_health -= this.attack_poke_1
-      console.log("I ATTACKED PLAYER TWO FUCK YES", this._healthService.player_2_health) 
+      this.attack_poke_1 = Math.floor(Math.random() * (this.player1_attack1 + this.attack_1));
+      if(this._healthService.player_2_health > 0){
+        this._healthService.player_2_health -= this.attack_poke_1; 
+      }
+      else{
+        var observable = this._httpService.player_win(this.name);
+        observable.subscribe();
+        // alert('Game Over');
+        // this._router.navigate(['']);
+      }
     }
   }
   player1_make_move3(){
@@ -112,9 +128,16 @@ export class Player1Component implements OnInit {
       this._healthService.player_1_health += Math.floor(Math.random() * (this.special_attack_1));
     }
     else{
-      this.attack_poke_1 = Math.floor(Math.random() * (this.player1_attack3 + this.attack_1));
-      this._healthService.player_2_health -= this.attack_poke_1
-      console.log("I ATTACKED PLAYER TWO FUCK YES", this._healthService.player_2_health) 
+      this.attack_poke_1 = Math.floor(Math.random() * (this.player1_attack1 + this.attack_1));
+      if(this._healthService.player_2_health > 0){
+        this._healthService.player_2_health -= this.attack_poke_1; 
+      }
+      else{
+        var observable = this._httpService.player_win(this.name);
+        observable.subscribe();
+        // alert('Game Over');
+        // this._router.navigate(['']);
+      }
     }
   }
   player1_make_move4(){
@@ -122,9 +145,16 @@ export class Player1Component implements OnInit {
       this._healthService.player_1_health += Math.floor(Math.random() * (this.special_attack_1));
     }
     else{
-      this.attack_poke_1 = Math.floor(Math.random() * (this.player1_attack4 + this.attack_1));
-      this._healthService.player_2_health -= this.attack_poke_1
-      console.log("I ATTACKED PLAYER TWO FUCK YES", this._healthService.player_2_health) 
+      this.attack_poke_1 = Math.floor(Math.random() * (this.player1_attack1 + this.attack_1));
+      if(this._healthService.player_2_health > 0){
+        this._healthService.player_2_health -= this.attack_poke_1; 
+      }
+      else{
+        var observable = this._httpService.player_win(this.name);
+        observable.subscribe();
+        // alert('Game Over');
+        // this._router.navigate(['']);
+      }
     }
   }
 }
