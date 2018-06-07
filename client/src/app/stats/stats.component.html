@@ -1,0 +1,21 @@
+<div>
+	<h2>Champions Corner</h2>
+	<div id="content">
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Wins</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let element of stats">
+					<td>{{element.poke_id}}</td>
+					<td>{{element.name.toUpperCase()}}</td>
+					<td>{{element.wins}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

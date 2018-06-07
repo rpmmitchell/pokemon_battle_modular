@@ -10,6 +10,7 @@ import { HttpService } from './http.service';
 import { HealthService } from './health.service';
 import { Player1Component } from './player-1/player-1.component';
 import { Player2Component } from './player-2/player-2.component';
+import { StatsComponent } from './stats/stats.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { Player2Component } from './player-2/player-2.component';
     HomeComponent,
     BattleComponent,
     Player1Component,
-    Player2Component
+    Player2Component,
+    StatsComponent
   ],
   imports: [
     BrowserModule,

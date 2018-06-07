@@ -1,8 +1,17 @@
-button {
+#button1 {
 	font-size: 60px;
 	width: 50%;
-	height: 500px;
+	height: 300px;
 	background: red;
+	margin-left: 24%;
+	border-radius: 8px;
+}
+
+#button2 {
+	font-size: 60px;
+	width: 50%;
+	height: 150px;
+	background: steelblue;
 	margin-left: 24%;
 	border-radius: 8px;
 }

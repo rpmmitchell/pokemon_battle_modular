@@ -45,9 +45,12 @@ export class HttpService {
     return this._http.get('/pokemon/grab/moves/' + id_2[3]);
   }
 
-  player_win(name){
-    console.log(name)
-    return this._http.post('/pokemon/player/win', name);
+  player_win(content){
+    return this._http.post('/pokemon/player/win', content);
+  }
+
+  stats(){
+    return this._http.get('/pokemon/stats');
   }
 
 }

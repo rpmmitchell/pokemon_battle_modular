@@ -10,8 +10,9 @@ mongoose.Promise = global.Promise;
 
 var Schema = mongoose.Schema;
 var PokemonSchema = new mongoose.Schema({
+	poke_id: {type: String, required: true},
     name: {type: String, required: true},
-    wins: {type: Number, required: false},
+    wins: {type: Number, required: true},
 });
 
 mongoose.model('Pokemon', PokemonSchema);
@@ -71,7 +72,45 @@ app.get('/pokemon/grab/moves/:id', (req, res) => {
 })
 
 app.post('/pokemon/player/win', (req, res) => {
-	console.log(req.body.name)
+	Pokemon.findOne({poke_id: req.body.poke_id}, (err, pokemon) => {
+		if (pokemon) {
+			Pokemon.update({poke_id: req.body.poke_id}, {$inc: {wins: 1}}, (err) => {
+				if(err){
+					console.log("Error");
+					res.status(400).json(err.errors);
+				}
+				else{
+					res.json({message: "Success"})
+				}
+			});
+		}
+		else {
+			var pokemon = new Pokemon({poke_id: req.body.poke_id, name: req.body.name, wins: 1});
+			pokemon.save(function(err, pokemon){
+				if(err){
+					console.log('error');
+					res.status(400).json(err.errors);
+				}
+				else{
+					console.log("pokemon added");
+					res.json({message: 'success', data:pokemon})
+				}
+			});
+		}
+	});
+});
+
+app.get('/pokemon/stats', (req, res) => {
+	Pokemon.find({}).sort({'wins': 'desc'}).exec((err, pokemon) => {
+		if(err){
+			console.log("error", err);
+			res.json({message: "error", error:err })
+		}
+		else{
+
+			res.json({message: "Success", data: pokemon})
+		}
+	})
 })
 
 

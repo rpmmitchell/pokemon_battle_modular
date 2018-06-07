@@ -9,7 +9,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   styleUrls: ['./player-2.component.css']
 })
 export class Player2Component implements OnInit {
-	id: string;
+	id: object;
+  winner: object;
     name: object;
   	poke2: any = [];
   	rand_moves2: any = [];
@@ -46,14 +47,16 @@ export class Player2Component implements OnInit {
       observable.subscribe(data => {
         this.poke2 = data.json();
         for(let i = 0; i < 4; i++){
-          this.num2 = Math.floor(Math.random()*(this.poke2.data.moves.length))
+          this.num2 = Math.floor(Math.random()*(this.poke2.data.moves.length));
           this.rand_moves2.push(this.num2);
-          this.rand_moves_url2.push(this.poke2.data.moves[this.num2].move.url)
+          this.rand_moves_url2.push(this.poke2.data.moves[this.num2].move.url);
         }
-        this.name = {name: this.poke2.data.name}
-        this._healthService.player_2_health = this.poke2.data.stats[5].base_stat * 3
-        this.attack_2 = this.poke2.data.stats[4].base_stat
-        this.special_attack_2 = this.poke2.data.stats[3].base_stat
+        this.winner = {poke_id: this.poke2.data.id, name: this.poke2.data.name};
+        this.id = {id: this.poke2.data.id};
+        this.name = {name: this.poke2.data.name};
+        this._healthService.player_2_health = this.poke2.data.stats[5].base_stat * 3;
+        this.attack_2 = this.poke2.data.stats[4].base_stat;
+        this.special_attack_2 = this.poke2.data.stats[3].base_stat;
         this.poke2_move_stat();
         this.render2 = true;
       }); 
@@ -105,8 +108,10 @@ export class Player2Component implements OnInit {
         this._healthService.player_1_health -= this.attack_poke_2; 
       }
       else{
-        var observable = this._httpService.player_win(this.name);
+        var observable = this._httpService.player_win(this.winner);
         observable.subscribe();
+        alert('Game Over');
+        this._router.navigate(['']);
       }
     }
   }
@@ -121,8 +126,10 @@ export class Player2Component implements OnInit {
         this._healthService.player_1_health -= this.attack_poke_2; 
       }
       else{
-        var observable = this._httpService.player_win(this.name);
+        var observable = this._httpService.player_win(this.winner);
         observable.subscribe();
+        alert('Game Over');
+        this._router.navigate(['']);
       }
     }
   }
@@ -137,8 +144,10 @@ export class Player2Component implements OnInit {
         this._healthService.player_1_health -= this.attack_poke_2; 
       }
       else{
-        var observable = this._httpService.player_win(this.name);
+        var observable = this._httpService.player_win(this.winner);
         observable.subscribe();
+        alert('Game Over');
+        this._router.navigate(['']);
       }
     }
   }
@@ -153,8 +162,10 @@ export class Player2Component implements OnInit {
         this._healthService.player_1_health -= this.attack_poke_2; 
       }
       else{
-        var observable = this._httpService.player_win(this.name);
+        var observable = this._httpService.player_win(this.winner);
         observable.subscribe();
+        alert('Game Over');
+        this._router.navigate(['']);
       }
     }
   }
