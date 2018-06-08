@@ -3,7 +3,7 @@
 	<div id="content">
 		<ul>
 			<li>{{ name.name.toUpperCase() }}</li>
-			<li id="health">HP: {{ _healthService.player_1_health  }}</li>
+			<li id="health">HP {{ _healthService.player_1_health  }}</li>
 		</ul>
 		<div id="buttons_1">
 			<button (click)="player1_make_move1()">{{ poke1.data.moves[ rand_moves[0] ].move.name }}</button>

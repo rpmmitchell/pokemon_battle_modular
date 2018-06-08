@@ -12,6 +12,7 @@ export class Player2Component implements OnInit {
 	id: object;
   winner: object;
     name: object;
+    display_name: string;
   	poke2: any = [];
   	rand_moves2: any = [];
   	rand_moves_url2: any = [];
@@ -54,6 +55,7 @@ export class Player2Component implements OnInit {
         this.winner = {poke_id: this.poke2.data.id, name: this.poke2.data.name};
         this.id = {id: this.poke2.data.id};
         this.name = {name: this.poke2.data.name};
+        this.display_name = this.poke2.data.name.toUpperCase();
         this._healthService.player_2_health = this.poke2.data.stats[5].base_stat * 3;
         this.attack_2 = this.poke2.data.stats[4].base_stat;
         this.special_attack_2 = this.poke2.data.stats[3].base_stat;
@@ -110,7 +112,7 @@ export class Player2Component implements OnInit {
       else{
         var observable = this._httpService.player_win(this.winner);
         observable.subscribe();
-        alert('Game Over');
+        alert(this.display_name + " WINS");
         this._router.navigate(['']);
       }
     }
@@ -128,7 +130,7 @@ export class Player2Component implements OnInit {
       else{
         var observable = this._httpService.player_win(this.winner);
         observable.subscribe();
-        alert('Game Over');
+        alert(this.display_name + " WINS");
         this._router.navigate(['']);
       }
     }
@@ -146,7 +148,7 @@ export class Player2Component implements OnInit {
       else{
         var observable = this._httpService.player_win(this.winner);
         observable.subscribe();
-        alert('Game Over');
+        alert(this.display_name + " WINS");
         this._router.navigate(['']);
       }
     }
@@ -164,7 +166,7 @@ export class Player2Component implements OnInit {
       else{
         var observable = this._httpService.player_win(this.winner);
         observable.subscribe();
-        alert('Game Over');
+        alert(this.display_name + " WINS");
         this._router.navigate(['']);
       }
     }

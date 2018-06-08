@@ -4,7 +4,7 @@
 	<div id="content">
 		<ul>
 			<li>{{name.name.toUpperCase()}}</li>
-			<li id="health">HP: {{ _healthService.player_2_health }}</li>
+			<li id="health">HP {{ _healthService.player_2_health }}</li>
 		</ul>
 		<div id="buttons_2">
 			<button (click)="player2_make_move1()">{{ poke2.data.moves[ rand_moves2[0] ].move.name }}</button>

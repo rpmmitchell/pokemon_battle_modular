@@ -1,20 +1,25 @@
 #player_1 {
 	/*border: solid black 2px;*/
 	height: 20%;
+
 }
 
 img {
 	/*border: solid black 2px;*/
 	width: 20%;
-	height: 10%;
-	vertical-align: top;
-	margin-left: 80%;
-	margin-top: -10%;
+	height: 150%;
+	vertical-align: bottom;
+	display: inline-block;
+	margin-left: 75%;
 }
 
 #content {
+	margin: 1%;
 	border: 2px solid black;
+	display: block;
+	background: white;
 	width: 50%;
+	opacity: 0.8;
 }
 
 ul {
@@ -24,6 +29,7 @@ ul {
 #buttons_1 {
 	/*border: 2px solid black;*/
 	width: 50%;
+	margin: 1%;
 
 }
 
@@ -33,7 +39,7 @@ button {
 }
 
 #health {
-	margin-right: 20px;
+	margin-right: 50px;
 	float: right;
 }
 

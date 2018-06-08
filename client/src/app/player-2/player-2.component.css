@@ -1,17 +1,26 @@
 #player_2 {
 	/*border: solid black 2px;*/
+	margin-top: 200px;
+	height: 275px;
+	vertical-align: bottom;
 }
 img {
 	/*border: solid 2px black;*/
-	width: 20%;
-	height: 10%;
+	width: 30%;
+	height: 120%;
+	margin-left: 5%;
 }
 
 #content{
-	vertical-align: top;
+	vertical-align: bottom;
 	border: 2px solid black;
 	width: 50%;
-	float: right;
+	margin-left: 48.5%;
+	margin-bottom: 1%;
+	margin-top: -220px;
+	display: block;
+	background: white;
+	opacity: 0.8;
 }
 
 ul {
@@ -21,6 +30,7 @@ ul {
 #buttons_2 {
 	/*border: 2px solid black;*/
 	width: 50%;
+	margin: 1%;
 }
 
 button {
@@ -29,7 +39,7 @@ button {
 }
 
 #health {
-	margin-right: 20px;
+	margin-right: 50px;
 	float: right;
 }
 

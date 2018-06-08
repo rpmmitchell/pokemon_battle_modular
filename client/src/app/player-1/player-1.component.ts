@@ -55,7 +55,7 @@ export class Player1Component implements OnInit {
   				}
           this.winner = {poke_id: this.poke1.data.id, name: this.poke1.data.name };
           this.name = {name: this.poke1.data.name};
-          this.display_name = this.poke1.data.name;
+          this.display_name = this.poke1.data.name.toUpperCase();
           this.id = {id: this.poke1.data.id};
         	this._healthService.player_1_health = this.poke1.data.stats[5].base_stat * 3;
           this.attack_1 = this.poke1.data.stats[4].base_stat;
