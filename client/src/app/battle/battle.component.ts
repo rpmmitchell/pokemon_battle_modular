@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+  
+declare var $: any;
 
 @Component({
   selector: 'app-battle',
@@ -16,9 +18,12 @@ export class BattleComponent implements OnInit {
   	) { }
 
   ngOnInit() {
-  	// this.render1 = false
-   //  this.render2 = false
-  	// this.poke1_grab()
+  
   }
 
+  home(){
+    $("#dialog").dialog("destroy");
+    $("#dialog2").dialog("destroy");
+    this._router.navigate(['']);
+  }
 }

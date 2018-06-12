@@ -47,3 +47,35 @@ li {
 	display: inline-block;
 	width: 10%;
 }
+
+#win_title {
+	border: 2px solid black;
+	background: white;
+	width: 25%;
+	height: 100px;
+}
+
+#dialog {
+	border: 2px solid black;
+	width: 200px;
+	height: 100px;
+	background-color: steelblue;
+}
+
+#dialog p {
+	text-align: center;
+	color: white;
+	font-size: 30px;
+}
+
+#opener {
+	visibility: hidden;
+}
+
+#home_button {
+	margin-left: 30%;
+	margin-bottom: 5px;
+	border-radius: 8px;
+}
+
+

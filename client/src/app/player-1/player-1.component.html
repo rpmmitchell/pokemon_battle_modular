@@ -14,3 +14,10 @@
 	</div>
 	<img src= "{{ poke1.data.sprites.front_default }}">
 </div>
+
+<div id="dialog">
+  	<p> {{ name.name.toUpperCase() }} wins!</p>
+  	<button [routerLink]="['']" id="home_button">Rematch!</button>
+</div>
+
+<button id="opener"></button>

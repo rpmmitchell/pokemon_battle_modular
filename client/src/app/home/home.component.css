@@ -16,7 +16,18 @@
 	border-radius: 8px;
 }
 
-div {
-	/*background: #9d9da0;*/
 
+#dialog {
+	border: 2px solid black;
+	width: 200px;
+	height: 100px;
+	background-color: steelblue;
 }
+
+#dialog p {
+	text-align: center;
+	color: white;
+	font-size: 30px;
+}
+
+

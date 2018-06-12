@@ -3,6 +3,8 @@ import { HttpService } from '../http.service';
 import { HealthService } from '../health.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
+declare var $: any;
+
 @Component({
   selector: 'app-player-2',
   templateUrl: './player-2.component.html',
@@ -38,6 +40,27 @@ export class Player2Component implements OnInit {
   ngOnInit() {
   	this.render2 = false
   	this.poke2_grab()
+    $( function() {
+      $( "#dialog2" ).dialog({
+        autoOpen: false,
+        open: function(event, ui) {
+          $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+        },
+        show: {
+          effect: "explode",
+          duration: 1000
+        }
+      });
+   
+      $( "#opener2" ).on( "click", function() {
+        $( "#dialog2" ).dialog( "open" );
+      });
+      $("#home_button2").on("click", function(){
+        $("#dialog2").dialog( "close" );
+        $("#dialog2").dialog( "destroy" );
+        $("#dialog").dialog( "destroy" );
+      })
+    });
   }
 
   poke2_grab(){
@@ -112,8 +135,7 @@ export class Player2Component implements OnInit {
       else{
         var observable = this._httpService.player_win(this.winner);
         observable.subscribe();
-        alert(this.display_name + " WINS");
-        this._router.navigate(['']);
+        $('#opener2').trigger('click');
       }
     }
   }
@@ -130,8 +152,7 @@ export class Player2Component implements OnInit {
       else{
         var observable = this._httpService.player_win(this.winner);
         observable.subscribe();
-        alert(this.display_name + " WINS");
-        this._router.navigate(['']);
+       $('#opener2').trigger('click');
       }
     }
   }
@@ -148,8 +169,7 @@ export class Player2Component implements OnInit {
       else{
         var observable = this._httpService.player_win(this.winner);
         observable.subscribe();
-        alert(this.display_name + " WINS");
-        this._router.navigate(['']);
+        $('#opener2').trigger('click');
       }
     }
   }
@@ -166,8 +186,7 @@ export class Player2Component implements OnInit {
       else{
         var observable = this._httpService.player_win(this.winner);
         observable.subscribe();
-        alert(this.display_name + " WINS");
-        this._router.navigate(['']);
+        $('#opener2').trigger('click');
       }
     }
   }

@@ -47,3 +47,26 @@ li {
 	display: inline-block;
 	width: 10%;
 }
+
+#dialog2 {
+	border: 2px solid black;
+	width: 200px;
+	height: 100px;
+	background-color: steelblue;
+}
+
+#dialog2 p {
+	text-align: center;
+	color: white;
+	font-size: 30px;
+}
+
+#opener2 {
+	visibility: hidden;
+}
+
+#home_button2 {
+	margin-left: 30%;
+	margin-bottom: 5px;
+	border-radius: 8px;
+}

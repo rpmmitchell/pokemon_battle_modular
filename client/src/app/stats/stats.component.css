@@ -24,3 +24,12 @@ td {
 	display: inline-block;
 	overflow: scroll;
 }
+
+button {
+	margin-bottom: 20px;
+	width: 60px;
+	height: 20px;
+	background-color: steelblue;
+	color: white;
+	border-radius: 8px;
+}
