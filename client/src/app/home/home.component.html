@@ -1,7 +1,31 @@
-<div>
-	<button (click)="poke_pic()" id="button1">TO BATTLE</button>
-	<button [routerLink]="['stats']" id="button2">Champions Corner</button>
+
+<div id="container">
+	<div id="pokemon_1">
+		<img class="pokemon" src="https://cdn.bulbagarden.net/upload/thumb/6/67/250Ho-Oh.png/250px-250Ho-Oh.png">
+		<img class ="pokeball" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0DasAZLd_zr-q3YvceZFg73SSaPbQxJFljLQeFlJtTJidRPiP">
+	</div>
+	<div id="button_holder">
+		<h1>BATTLE ROYALE</h1>
+		<div id="inner_buttons">
+			<button (click)="poke_pic()" id="button1" type="button" class="btn btn-outline-danger">TO BATTLE</button>
+			<button [routerLink]="['stats']" id="button2" type="button" class="btn btn-outline-primary">Champions Corner</button>
+		</div>
+	</div>
+
+	<div id="pokemon_2">
+		<img class="pokemon" src="https://cdn.bulbagarden.net/upload/thumb/4/44/249Lugia.png/250px-249Lugia.png">
+		<img class="pokeball" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0DasAZLd_zr-q3YvceZFg73SSaPbQxJFljLQeFlJtTJidRPiP">
+	</div>
+	<div id="tablet">
+		<div id="pokemon_3">
+			<img class ="pokeball" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0DasAZLd_zr-q3YvceZFg73SSaPbQxJFljLQeFlJtTJidRPiP">
+		</div>
+		<div id="pokemon_4">
+			<img class ="pokeball" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0DasAZLd_zr-q3YvceZFg73SSaPbQxJFljLQeFlJtTJidRPiP">
+		</div>
+	</div>
 </div>
+	<!-- <canvas id="myCanvas" resize></canvas> -->
 
 <!-- <div id="dialog">
   <p>Butt wins!</p>

@@ -113,6 +113,20 @@ app.get('/pokemon/stats', (req, res) => {
 	})
 })
 
+app.delete('/pokemon/delete', (req, res) => {
+	pokemon = Pokemon.find({})
+	pokemon.remove(function(err, pokemon){
+		if(err){
+			console.log('error');
+			res.status(400).json(err.errors);
+		}
+		else{
+			console.log("Pokemon deleted")
+			res.json({message: "success"});
+		}
+	})
+})
+
 
 
 

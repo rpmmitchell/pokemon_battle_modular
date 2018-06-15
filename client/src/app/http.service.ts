@@ -53,4 +53,8 @@ export class HttpService {
     return this._http.get('/pokemon/stats');
   }
 
+  remove_champs(){
+    return this._http.delete('/pokemon/delete');
+  }
+
 }
