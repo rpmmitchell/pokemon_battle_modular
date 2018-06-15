@@ -27,7 +27,7 @@ export class StatsComponent implements OnInit {
 
   remove_champs(){
     let observable = this._httpService.remove_champs();
-    observable.subscribe()
-    this._router.navigate([''])
+    observable.subscribe();
+    this.getStats();
   }
 }
