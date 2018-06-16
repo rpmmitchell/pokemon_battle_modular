@@ -1,81 +1,258 @@
-#player_1 {
-	/*border: solid black 2px;*/
-	height: 20%;
 
+@media only screen and (max-width: 599px){
+	#player_1 {
+		/*border: solid black 2px;*/
+		height: 20%;
+
+	}
+
+	img {
+		/*border: solid black 2px;*/
+		width: 25%;
+		height: 100%;
+		/*vertical-align: bottom;*/
+		display: inline-block;
+		margin-left: 68%;
+		margin-top: 100px;
+	}
+
+	#content {
+		margin: 1%;
+		border: 2px solid black;
+		display: block;
+		background: white;
+		display: inline-block;
+		width: 50%;
+		opacity: 0.8;
+	}
+
+	#buttons_1 {
+		width: 100%;
+		margin: 1%;
+		font-size: 10px;
+		margin-left: 5px;
+
+	}
+
+	button {
+		width: 45%;
+		height: 50px;
+		margin: 2px;
+	}
+
+	#health {
+		margin-right: 10px;
+		margin-top: 5px;
+		float: right;
+	}
+
+	#win_title {
+		border: 2px solid black;
+		background: white;
+		width: 25%;
+		height: 100px;
+	}
+
+	#dialog {
+		border: 2px solid black;
+		width: 250px;
+		height: 100px;
+		background-color: steelblue;
+		text-align: center;
+	}
+
+	#dialog p {
+		/*margin-left: 10%;*/
+		color: white;
+		font-size: 30px;
+	}
+
+	#opener {
+		display: none;
+	}
+
+	#home_button {
+		/*margin-left: 30%;*/
+		margin-bottom: 5px;
+		border-radius: 8px;
+	}
+
+	p {
+		display: inline-block;
+		margin-left: 10px;
+		font-size: 12px;
+	}
 }
 
-img {
-	/*border: solid black 2px;*/
-	width: 20%;
-	height: 150%;
-	vertical-align: bottom;
-	display: inline-block;
-	margin-left: 75%;
+
+@media only screen and (min-width: 600px){
+
+	#player_1 {
+		/*border: solid black 2px;*/
+		height: 20%;
+
+	}
+
+	img {
+		/*border: solid black 2px;*/
+		width: 20%;
+		height: 120%;
+		margin-top: 70px;
+		display: inline-block;
+		margin-left: 70%;
+	}
+
+	#content {
+		margin: 1%;
+		border: 2px solid black;
+		display: block;
+		background: white;
+		display: inline-block;
+		width: 50%;
+		opacity: 0.8;
+	}
+
+	#buttons_1 {
+		width: 100%;
+		margin: 1%;
+		/*border: 2px solid black;*/
+		font-size: 10px;
+		margin-left: 12px;
+
+	}
+
+	button {
+		width: 34%;
+		height: 50px;
+		margin: 2px;
+	}
+
+	#health {
+		margin-right: 10px;
+		margin-top: 2px;
+		float: right;
+	}
+
+
+	#win_title {
+		border: 2px solid black;
+		background: white;
+		width: 25%;
+		height: 100px;
+	}
+
+	#dialog {
+		border: 2px solid black;
+		width: 250px;
+		height: 100px;
+		background-color: steelblue;
+		text-align: center;
+	}
+
+	#dialog p {
+		/*margin-left: 10%;*/
+		color: white;
+		font-size: 30px;
+	}
+
+	#opener {
+		display: none;
+	}
+
+	#home_button {
+		/*margin-left: 30%;*/
+		margin-bottom: 5px;
+		border-radius: 8px;
+	}
+
+	p {
+		display: inline-block;
+		margin-left: 14px;
+	}
+	
 }
 
-#content {
-	margin: 1%;
-	border: 2px solid black;
-	display: block;
-	background: white;
-	width: 50%;
-	opacity: 0.8;
-}
 
-ul {
-	list-style: none;
-}
 
-#buttons_1 {
-	/*border: 2px solid black;*/
-	width: 60%;
-	margin: 1%;
 
-}
 
-button {
-	width: 40%;
-	height: 50px;
-}
+@media only screen and (min-width: 1024px) {
+	#player_1 {
+		/*border: solid black 2px;*/
+		height: 20%;
 
-#health {
-	margin-right: 50px;
-	float: right;
-}
+	}
 
-li {
-	display: inline-block;
-	width: 10%;
-}
+	img {
+		/*border: solid black 2px;*/
+		width: 20%;
+		height: 150%;
+		/*vertical-align: bottom;*/
+		margin-top: -15px;
+		display: inline-block;
+		margin-left: 70%;
+	}
 
-#win_title {
-	border: 2px solid black;
-	background: white;
-	width: 25%;
-	height: 100px;
-}
+	#content {
+		margin: 1%;
+		border: 2px solid black;
+		display: block;
+		background: white;
+		width: 50%;
+		opacity: 0.8;
+	}
 
-#dialog {
-	border: 2px solid black;
-	width: 200px;
-	height: 100px;
-	background-color: steelblue;
-}
 
-#dialog p {
-	text-align: center;
-	color: white;
-	font-size: 30px;
-}
+	#buttons_1 {
+		/*border: 2px solid black;*/
+		width: 60%;
+		margin: 1%;
+		margin-left: 10px;
 
-#opener {
-	visibility: hidden;
-}
+	}
 
-#home_button {
-	margin-left: 30%;
-	margin-bottom: 5px;
-	border-radius: 8px;
+	button {
+		width: 40%;
+		height: 50px;
+	}
+
+	#health {
+		margin-right: 10px;
+		margin-top: 5px;
+		float: right;
+	}
+
+	#win_title {
+		border: 2px solid black;
+		background: white;
+		width: 25%;
+		height: 100px;
+	}
+
+	#dialog {
+		border: 2px solid black;
+		width: 250px;
+		height: 100px;
+		background-color: steelblue;
+		text-align: center;
+	}
+
+	#dialog p {
+		/*margin-left: 10%;*/
+		color: white;
+		font-size: 30px;
+	}
+
+	#opener {
+		display: none;
+	}
+
+	#home_button {
+		/*margin-left: 30%;*/
+		margin-bottom: 5px;
+		border-radius: 8px;
+	}
+	
 }
 
 

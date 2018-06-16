@@ -2,10 +2,8 @@
 <div *ngIf = "render2" id="player_2">
 	<img src= "{{ poke2.data.sprites.back_default }}" id="pic">
 	<div id="content">
-		<ul>
-			<li>{{name.name.toUpperCase()}}</li>
-			<li id="health">HP {{ _healthService.player_2_health }}</li>
-		</ul>
+		<p>{{name.name.toUpperCase()}}</p>
+		<p id="health">HP {{ _healthService.player_2_health }}</p>
 		<div id="buttons_2">
 			<button (click)="player2_make_move1()">{{ poke2.data.moves[ rand_moves2[0] ].move.name }}</button>
 			<button (click)="player2_make_move2()">{{ poke2.data.moves[ rand_moves2[1] ].move.name }}</button>
@@ -21,3 +19,29 @@
 </div>
 
 <button id="opener2"></button>
+
+
+
+<!-- 
+ <div id="player_2">
+	<img src= "https://cdn.bulbagarden.net/upload/thumb/7/7e/006Charizard.png/250px-006Charizard.png" id="pic">
+	<div id="content">
+		<p>COCOBILZZMAN</p>
+		<p id="health">HP 50</p>
+		<div id="buttons_2">
+			<button (click)="player2_make_move1()">blizzbou</button>
+			<button (click)="player2_make_move2()">blizzbou</button>
+			<button (click)="player2_make_move3()">blizzbou</button>
+			<button (click)="player2_make_move4()">blizzbou</button>
+		</div>
+	</div>
+</div> -->
+
+<!-- <div id="dialog2">
+  	<p> {{ name.name.toUpperCase() }} wins!</p>
+  	<button [routerLink]="['']" id="home_button2">Rematch!</button>
+</div>
+ -->
+<!-- <button id="opener2"></button> -->
+
+

@@ -1,22 +1,44 @@
-/*img {
-	height: 200px;
-	width: 200px;
+@media only screen and (max-width: 599px){
+	#container {
+		background: url("http://i.imgur.com/mTTfO7s.png");
+		background-size: 100% 100%;
+		width: 440px;
+		height: 700px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 25px;
+	}
 }
 
-#player_1 img {
-	height: 125px;
-	width: 125px;
-}*/
 
-#container {
-	background: url("http://i.imgur.com/mTTfO7s.png");
-	background-size: 100% 100%;
-	border: 2px solid black;
-	height: 690px;
-
+@media only screen and (min-width: 600px){
+	#container {
+		background: url("http://i.imgur.com/mTTfO7s.png");
+		background-size: 100% 100%;
+		width: 600px;
+		margin-top: 25px;
+		margin-left: auto;
+		margin-right: auto;
+		border: 2px solid black;
+		height: 700px;
+	}
 }
 
-button {
+@media only screen and (min-width: 1024px){
+	#container {
+		background: url("http://i.imgur.com/mTTfO7s.png");
+		background-size: 100% 100%;
+		width: 1000px;
+		margin-top: 25px;
+		margin-left: auto;
+		margin-right: auto;
+		border: 2px solid black;
+		height: 700px;
+	}
+}
+
+
+/*button {
 	margin-left: 47%;
 	margin-bottom: 20px;
 	width: 60px;
@@ -24,4 +46,4 @@ button {
 	background-color: steelblue;
 	color: white;
 	border-radius: 8px;
-}
+}*/
