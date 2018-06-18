@@ -79,7 +79,7 @@
 @media only screen and (min-width: 600px){
 	#player_2 {
 		/*border: solid black 2px;*/
-		margin-top: 315px;
+		margin-top: 330px;
 		height: 275px;
 	}
 	img {
@@ -165,7 +165,7 @@
 @media only screen and (min-width: 1024px){
 	#player_2 {
 		/*border: solid black 2px;*/
-		margin-top: 240px;
+		margin-top: 255px;
 		height: 275px;
 		vertical-align: bottom;
 	}

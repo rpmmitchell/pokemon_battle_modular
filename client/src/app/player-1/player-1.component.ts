@@ -64,6 +64,12 @@ export class Player1Component implements OnInit {
     });
   }
 
+  home(){
+    $("#dialog").dialog("destroy");
+    $("#dialog2").dialog("destroy");
+    this._router.navigate(['']);
+  }
+
   poke1_grab(){
 		event.preventDefault();
 		this._route.params.subscribe((params: Params) => {

@@ -21,7 +21,7 @@ h1 {
 	color: white;
 }
 
-@media only screen and (max-width: 590px){
+@media only screen and (max-width: 599px){
 	#container{
 		width: 300px;
 		/*border: 2px solid black;*/
@@ -89,7 +89,7 @@ h1 {
 }
 
 
-@media only screen and (min-width: 591px){
+@media only screen and (min-width: 600px){
 	#container{
 		width: 610px;
 		/*border: 2px solid black;*/
